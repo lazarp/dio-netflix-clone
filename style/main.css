@@ -1,3 +1,5 @@
+@import url(featured.css);
+
 :root{
 	--red-logo: #be0b0b;
 	--dim-white: rgb(197, 197, 177);
@@ -15,20 +17,21 @@
 body{
 	font-family: consolas;
 	background-color: black;
+	color:white;
 }
 
-header{
+header .container{
 	display:flex;
 	align-items: center;
 	justify-content: space-between;
 }
-header h2{
+header .logo{
 	color:var(--red-logo);
 	font-size:40px;
 }
 nav a{
 	margin-right: 10px;
-	color:vaar(--dim-white);
+	color:var(--dim-white);
 }
 nav a:hover{
 	color:var(--highlight-white);
