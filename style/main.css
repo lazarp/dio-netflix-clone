@@ -1,3 +1,10 @@
+:root{
+	--red-logo: #be0b0b;
+	--dim-white: rgb(197, 197, 177);
+	--highlight-white:white;
+
+}
+
 *{
 	margin:0;
 	padding:0;
@@ -16,13 +23,13 @@ header{
 	justify-content: space-between;
 }
 header h2{
-	color:#be0b0b;
+	color:var(--red-logo);
 	font-size:40px;
 }
 nav a{
 	margin-right: 10px;
-	color:rgb(197, 197, 177)
+	color:vaar(--dim-white);
 }
 nav a:hover{
-	color:white;
+	color:var(--highlight-white);
 }
