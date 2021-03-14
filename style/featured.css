@@ -4,8 +4,9 @@
 }
 .poster{
     height:100%;
-    background-image: url(/img/hp1.jpg);
-    background-size:contain;
+	background-color:blue;
+    background-image: url(https://www.themoviedb.org/t/p/original/e4pyDi1C7TGjNIqmHwHBm9g99dD.jpg);
+    background-size:cover;
     background-repeat: no-repeat;
     background-position:center;
     border:1px solid white;
