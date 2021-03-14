@@ -1,11 +1,12 @@
 .content{
     height:500px;
-    width:100vw;
+    width:100%;
 }
 .poster{
     height:100%;
+	width:100%;
 	background-color:blue;
-    background-image: url(https://www.themoviedb.org/t/p/original/e4pyDi1C7TGjNIqmHwHBm9g99dD.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1)), url(https://www.themoviedb.org/t/p/original/e4pyDi1C7TGjNIqmHwHBm9g99dD.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position:center;
@@ -13,8 +14,9 @@
     /* background-position: center; */
 }
 .info{
-    border:1px solid yellow;
-    width:700px;
+	margin-left:20px;
+    
+    width:70%;
     height:100%;
     display:flex;
     flex-direction:column;
@@ -25,13 +27,14 @@
     margin-bottom: 20px;
     text-transform: uppercase;
 }
-.info p{
+.info .short-sinopsis{
     border-radius: 4px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.3);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     font-weight: 100;
 }
 .info .btn-group{
+	
     margin-top:20px;
     width:100%;
     display:flex;
