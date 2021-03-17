@@ -7,9 +7,11 @@
 	</head>
 	<body>
 		<section class="video-container">
-			<video controls class="video-player">
+			<video controls preload="metadata" class="video-player">
 				<source src="video/hp3.mp4" type="video/mp4">
 			</video>
+			<button onclick="renameHTML(getTime(), this)" class="comment-btn">Add Audio</button>
 		</section>
 	</body>
+	<script src="js/video.js"></script>
 </html>
