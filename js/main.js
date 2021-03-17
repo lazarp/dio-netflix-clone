@@ -14,3 +14,7 @@ $('.owl-carousel').owlCarousel({
         }
     }
 })
+
+document.getElementById("watch-from-poster").onclick = function () {
+        location.href = "video-play.html";
+    };
