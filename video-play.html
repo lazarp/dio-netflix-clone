@@ -7,10 +7,18 @@
 	</head>
 	<body>
 		<section class="video-container">
-			<video controls preload="metadata" class="video-player">
+			<div class="video-controls container">
+				
+				<div onclick="renameHTML(getTime(), this)" class="comment-btn">
+					<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxwYXRoIGQ9Ik0yOS43MjYsNDAuODYxaDQuNTQ5YzQuMTksMCw3LjU4Ny0zLjM5Niw3LjU4Ny03LjU4NlY3LjY4OGMwLTQuMTktMy4zOTYtNy41ODYtNy41ODctNy41ODZoLTQuNTQ5ICAgYy00LjE5LDAtNy41ODYsMy4zOTYtNy41ODYsNy41ODZ2MjUuNTg3QzIyLjEzOSwzNy40NjUsMjUuNTM1LDQwLjg2MSwyOS43MjYsNDAuODYxeiIgZmlsbD0iIzI0MUYyMCIvPjxwYXRoIGQ9Ik00Ni4yOTUsMjMuOTc2aC0wLjMwOWMtMS4yNiwwLTEuMzY3LDEuNjgtMS4zNzMsMi4xMTN2OC4xMTdjMCw1LjM2MS00LjM0NCw5LjcwNS05LjcwMyw5LjcwNWgtNS44MiAgIGMtNS4zNTcsMC05LjcwNC00LjM0NC05LjcwNC05LjcwNXYtOC42MzJjMC0xLjY1OS0xLjM5Ny0xLjU5Ny0xLjM5Ny0xLjU5N2gtMC4zMzFjLTAuNDUzLDAuMDQ3LTEuMjA5LDAuMzUzLTEuMjA5LDEuOTA2djkuMzM3ICAgYzAsNi42MDcsNS4zNTgsMTEuOTYzLDExLjk2MywxMS45NjNoMS43NTR2MTEuMjg3Yy0wLjAwNiwwLjMzNi0wLjEyOSwxLjM3My0xLjQzOCwxLjM4NWgtMS4zMDRjMCwwLTEuNzk0LTAuMDcyLTEuNzk0LDEuNjM1djAuNjY4ICAgYzAuMDA5LDAuMzc5LDAuMTU3LDEuNzQyLDEuOTM3LDEuNzQyaDguODQzYzEuNzI1LDAsMS45NDEtMS4xMDUsMS45NTktMS41NTN2LTAuNzM4YzAtMS44MDEtMi4wMzEtMS43NTQtMi4wMzEtMS43NTRIMzQuODQgICBjLTAuNDEyLTAuMDUzLTEuMDA3LTAuMzM2LTEuMDA3LTEuNTE4VjQ3LjE4MmgxLjc1NmM2LjYwNiwwLDExLjk2Mi01LjM1NSwxMS45NjItMTEuOTYzdi05LjY5MyAgIEM0Ny41NTEsMjQuMDMyLDQ2LjI5NSwyMy45NzYsNDYuMjk1LDIzLjk3NnoiIGZpbGw9IiMyNDFGMjAiLz48L2c+PC9zdmc+" alt="">
+					Add Audio
+				</div>
+			</div>
+			<video preload="metadata" class="video-player" poster="img/hp1.jpg">
 				<source src="video/hp3.mp4" type="video/mp4">
 			</video>
-			<button onclick="renameHTML(getTime(), this)" class="comment-btn">Add Audio</button>
+			
+			
 		</section>
 	</body>
 	<script src="js/video.js"></script>

@@ -1,5 +1,5 @@
-var video = document.getElementsByClassName("video-player")[0];
-var add_audio = document.getElementsByClassName("comment-btn")[0];
+let video = document.getElementsByClassName("video-player")[0];
+let add_audio = document.getElementsByClassName("comment-btn")[0];
 
 
 function getTime(){
@@ -8,5 +8,6 @@ function getTime(){
 }
 
 function renameHTML(new_text, object){
-    object.innerHTML = new_text;
+    // object.innerHTML = new_text;
+    video.pause();
 }
