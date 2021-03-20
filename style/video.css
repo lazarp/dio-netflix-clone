@@ -20,10 +20,66 @@ html{
     height:100%;
     background-color: black;
 }
-.comment-btn{
+.video-controls.container{
     position:absolute;
+    width:  100%;
+    height: 100%;
+    background:pink;
+}
+.video-menu{
+    position:absolute;
+    /* display: flex; */
+    
+    width:100%;
+    height:80px;
+    bottom:0;
     background:red;
-    bottom:35px;
-    right:50%;
-    z-index:2;
+}
+.timeline-group{
+	display:flex;
+    width:100%;
+    height:25%;
+    background:green;
+	text-align:center;
+}
+.timeline-group .progress-bar{
+	width:95%;
+	height:50%;
+	background:yellow;
+}
+.timeline-group .remaining-time{
+	width:5%;
+	height:100%;
+	background:brown;
+}
+.buttons-group{
+	width:100%;
+	height:75%;
+	background:blue;
+	display:flex;
+}
+.buttons-group .left-buttons{
+	background:purple;
+	height:100%;
+	width:20%;
+}
+.comment-btn{
+    /*position:relative;*/
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+    background:red;
+    width:100px;
+    height: 40px;
+}
+.comment-btn img{
+    height:20px;
+    /* margin-bottom: 5px; */
+}
+.buttons-group .right-buttons{
+	width:20%;
+	height:100%;
+	background:orange;
 }
