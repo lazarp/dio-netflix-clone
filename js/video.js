@@ -11,3 +11,11 @@ function renameHTML(new_text, object){
     // object.innerHTML = new_text;
     video.pause();
 }
+
+//---- PLAY/PAUSE ----------------------
+document.getElementById("play-button").addEventListener("click", function(){
+	if(video.paused)
+		video.play();
+	else
+		video.pause();
+});

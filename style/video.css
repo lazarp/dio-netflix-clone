@@ -24,7 +24,8 @@ html{
     position:absolute;
     width:  100%;
     height: 100%;
-    background:pink;
+	z-index:1;
+    /*background:pink;*/
 }
 .video-menu{
     position:absolute;
@@ -62,7 +63,14 @@ html{
 	background:purple;
 	height:100%;
 	width:20%;
+	display:flex;
 }
+.buttons-group .button{
+	width:30px;
+	height:30px;
+	background:black;
+}
+
 .comment-btn{
     /*position:relative;*/
     margin:auto;
