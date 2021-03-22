@@ -52,7 +52,18 @@ function update(){
 */
 
 progress_bar_container.addEventListener("click", function(e){
+	
 	if(!video.paused && !video.ended){
-		let mouseX = e.pageX - progress_bar_container.
+		progress_bar_container.style.backgroundColor="pink";
+		let mouseX = e.pageX - progress_bar_container.getBoundingClientRect().left;
+		
+		let newWidth_ratio = mouseX/progress_bar_container.getBoundingClientRect().width;
+		
+		let newTime = newWidth_ratio * video.duration;
+		video.currentTime = newTime;
+
+		let newWidth_percent = newWidth_ratio * 100;
+		progress_bar.style.width = newWidth_percent+"%";
+		
 	}
 });
