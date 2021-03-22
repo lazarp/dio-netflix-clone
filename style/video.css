@@ -41,7 +41,7 @@ html{
 	display: flex;
 	flex-direction: column;
 }
-#comment-container:hover{
+#comment-container:focus{
 	border:3px solid lightblue;
 }
 #comment-container textarea:focus{

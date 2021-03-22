@@ -68,12 +68,20 @@ progress_bar_container.addEventListener("click", function(e){
 	3) Salvar Comentário (?)
 
 */
-let comment_on = false;
+let comment_btn_clicked = false;
 comment_button.addEventListener("click", function(){
-	video.pause();
-	comment_on
-	comment_container.style.visibility = "visible";
-	comment_textarea.focus();
+	if(!comment_btn_clicked){
+		video.pause();
+		comment_container.style.visibility = "visible";
+		comment_container.focus();
+		comment_btn_clicked = true;
+		alert(document.activeElement.tagName);
+	}
+	else{
+		video.play();
+		comment_container.style.visibility = "hidden";
+		comment_btn_clicked = false;
+	}
 });
 
 // comment_textarea.addEventListener("focusout", function(){
