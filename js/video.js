@@ -3,17 +3,10 @@ let add_audio = document.getElementsByClassName("comment-btn")[0];
 let play_button = document.getElementById("play-button");
 let progress_bar = document.getElementById("progress-bar");
 let progress_bar_container = document.getElementById("progress-bar__container");
+let comment_button = document.getElementById("comment-btn");
+let comment_container = document.getElementById("comment-container");
+let comment_textarea = document.getElementById("comment_textarea");
 
-
-function getTime(){
-    console.log(video.currentTime);
-    return video.currentTime;
-}
-
-function renameHTML(new_text, object){
-    // object.innerHTML = new_text;
-    video.pause();
-}
 
 //---- PLAY/PAUSE ----------------------
 document.getElementById("play-button").addEventListener("click", function(){
@@ -53,7 +46,7 @@ function update(){
 
 progress_bar_container.addEventListener("click", function(e){
 	
-	if(!video.paused && !video.ended){
+	if(!video.ended){
 		progress_bar_container.style.backgroundColor="pink";
 		let mouseX = e.pageX - progress_bar_container.getBoundingClientRect().left;
 		
@@ -65,5 +58,20 @@ progress_bar_container.addEventListener("click", function(e){
 		let newWidth_percent = newWidth_ratio * 100;
 		progress_bar.style.width = newWidth_percent+"%";
 		
+	}
+});
+
+//---- ADD COMMENT ---------------------
+/*
+	1) Pausar Video
+	2) Habilitar Textarea
+	3) Salvar Comentário (?)
+
+*/
+
+comment_button.addEventListener("click", function(){
+	if(!video.paused){
+		video.pause();
+		comment_container.style.visibility = "visible";
 	}
 });
