@@ -34,8 +34,8 @@ html{
 .video-controls #comment-container {
 	visibility:hidden;
 	position:relative;	
-	width:200px;
-	height:100px;
+	width:300px;
+	height:150px;
 	/* border:1px solid white; */
 	margin-bottom:20px;
 	display: flex;
@@ -44,21 +44,37 @@ html{
 #comment-container:focus{
 	border:3px solid lightblue;
 }
+#comment-container .wrapper{
+	width:100%;
+	height:30%;
+	display: flex;
+}
 #comment-container textarea:focus{
-	background:red;
+	/* background:red; */
 }
 #comment-container textarea{
 	width:100%;
-	height:80%;
+	height:70%;
 	resize:none;
+	background:rgba(0,0,0, 0.4);
+	color:rgb(219,219,219);
+	outline:none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	border-radius:10px;
 }
-#comment-container input{
-	width:100%;
-	height:20%;
+#comment-container .button{
+	border-radius:10px;
 	background-color:pink;
 }
 #comment-container input:focus{
 	background:yellow;
+}
+#comment_send_button{
+	width:70%;
+}
+#comment_cancel_button{
+	width:30%;
 }
 .video-menu{
     position:relative;

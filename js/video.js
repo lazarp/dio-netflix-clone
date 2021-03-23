@@ -6,8 +6,8 @@ let progress_bar_container = document.getElementById("progress-bar__container");
 let comment_button = document.getElementById("comment-btn");
 let comment_container = document.getElementById("comment-container");
 let comment_textarea = document.getElementById("comment_textarea");
-
-
+let comment_cancel_button = document.getElementById("comment_cancel_button");
+let video_controls_container = document.getElementById("video_controls");
 //---- PLAY/PAUSE ----------------------
 document.getElementById("play-button").addEventListener("click", function(){
 	if(!video.paused && !video.ended){
@@ -75,16 +75,38 @@ comment_button.addEventListener("click", function(){
 		comment_container.style.visibility = "visible";
 		comment_container.focus();
 		comment_btn_clicked = true;
-		alert(document.activeElement.tagName);
 	}
 	else{
-		video.play();
+		// video.play();
 		comment_container.style.visibility = "hidden";
 		comment_btn_clicked = false;
 	}
 });
 
-// comment_textarea.addEventListener("focusout", function(){
-// 	if(document.activeElement != comment_button)
-// 		comment_container.style.visibility = "hidden";
-// });
+comment_cancel_button.addEventListener("click", function(){
+	comment_container.style.visibility = "hidden";
+	comment_btn_clicked = false;
+}, false);
+
+//----- SHORTCUTS CONTROLS -------
+document.addEventListener("keydown", function(e){
+	if(!e.shiftKey && !e.ctrlKey && !e.altKey && !e.metaKey && !comment_btn_clicked){
+		switch(e.key){
+			case " ": //Barra de Espaço
+					if(video.paused)
+						video.play();
+					else
+						video.pause();
+					e.preventDefault(); //evita repetiçao da entrada
+					break;
+		}
+	}
+}, false);
+
+//----- CLICK ON THE SCREEN ---------
+video_controls_container.addEventListener("click",function(){
+	if(video.paused)
+		video.play();
+	else
+		video.pause();
+},false);

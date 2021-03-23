@@ -7,11 +7,14 @@
 	</head>
 	<body>
 		<section class="video-container">
-			<div class="video-controls container">
+			<div id="video_controls" class="video-controls container">
 				<div id="comment-container" class="container">
 					<textarea id="comment_textarea" name="comment"></textarea>
-					
-					<input type="button" id="comment_send_button" class="button" value="Enviar">
+
+					<div id="btn-wrapper" class="wrapper">
+						<input type="button" id="comment_send_button" class="button" value="Enviar">
+						<input id="comment_cancel_button" type="button" value="Cancelar" class="button btn-cancel">
+					</div>
 				</div>
 				<div class="video-menu">
 					<div class="timeline-group">
