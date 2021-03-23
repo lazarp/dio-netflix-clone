@@ -8,6 +8,10 @@ let comment_container = document.getElementById("comment-container");
 let comment_textarea = document.getElementById("comment_textarea");
 let comment_cancel_button = document.getElementById("comment_cancel_button");
 let video_controls_container = document.getElementById("video_controls");
+let comment_send_button = document.getElementById("comment_send_button");
+
+
+
 //---- PLAY/PAUSE ----------------------
 document.getElementById("play-button").addEventListener("click", function(){
 	if(!video.paused && !video.ended){
@@ -65,7 +69,6 @@ progress_bar_container.addEventListener("click", function(e){
 /*
 	1) Pausar Video
 	2) Habilitar Textarea
-	3) Salvar Comentário (?)
 
 */
 let comment_btn_clicked = false;
@@ -104,9 +107,18 @@ document.addEventListener("keydown", function(e){
 }, false);
 
 //----- CLICK ON THE SCREEN ---------
-video_controls_container.addEventListener("click",function(){
-	if(video.paused)
-		video.play();
-	else
-		video.pause();
+//Deu problema. Tentar depois.
+// video_controls_container.addEventListener("click",function(){
+// 	if(video.paused)
+// 		video.play();
+// 	else
+// 		video.pause();
+// },false);
+
+//---- SAVE COMMENT ------
+comment_send_button.addEventListener("click", function(){
+	let key = video.currentTime;
+	let value = comment_textarea.value;
+	localStorage.setItem(key, value);
+	comment_container.style.visibility="hidden";
 },false);
