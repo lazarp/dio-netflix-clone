@@ -104,9 +104,10 @@ document.addEventListener("keydown", function(e){
 }, false);
 
 //----- CLICK ON THE SCREEN ---------
-video_controls_container.addEventListener("click",function(){
-	if(video.paused)
-		video.play();
-	else
-		video.pause();
-},false);
+//Deu problema. Tentar depois.
+// video_controls_container.addEventListener("click",function(){
+// 	if(video.paused)
+// 		video.play();
+// 	else
+// 		video.pause();
+// },false);
