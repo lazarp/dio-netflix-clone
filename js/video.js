@@ -29,11 +29,9 @@ function video_pause(){
 	video.pause();
 	play_span.style.visibility = "visible";
 	pause_span.style.visibility = "hidden";
-	// play_span.style.transition="all 0.3s";
-	// pause_span.style.transition="all 0.3s";
 	window.clearInterval(updatebar); //impede que o update fique sendo chamado 
 }
-//----- CLICK NO PLAY BUTTON
+//----- CLICK PLAY BUTTON -------------------------------
 play_pause_button.addEventListener("click", function(){
 	if(!video.paused && !video.ended){
 		video_pause();
@@ -49,7 +47,8 @@ function update(){
 		progress_bar.style.width = size_percent+'%';
 	}
 	else{
-		play_span.style.background="red";
+		play_span.style.visibility ="visible";
+		pause_span.style.visibility = "hidden";
 		progress_bar.style.width='0';
 		progress_bar.style.transition="all 0.1s";
 		window.clearInterval(updatebar); //impede que o update fique sendo chamado
