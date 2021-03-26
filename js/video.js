@@ -1,6 +1,8 @@
 let video = document.getElementsByClassName("video-player")[0];
 let add_audio = document.getElementsByClassName("comment-btn")[0];
-let play_button = document.getElementById("play-button");
+let play_pause_button = document.getElementById("play-pause-button");
+let play_span = document.getElementById("play-span");
+let pause_span = document.getElementById("pause-span");
 let progress_bar = document.getElementById("progress-bar");
 let progress_bar_container = document.getElementById("progress-bar__container");
 let comment_button = document.getElementById("comment-btn");
@@ -11,20 +13,32 @@ let video_controls_container = document.getElementById("video_controls");
 let comment_send_button = document.getElementById("comment_send_button");
 
 
+var updatebar;
 
 //---- PLAY/PAUSE ----------------------
-document.getElementById("play-button").addEventListener("click", function(){
+function video_play(){
+	video.play();
+	play_span.style.visibility = "hidden";
+	pause_span.style.visibility = "visible";
+	// play_span.style.transition = "all 0.3s";
+	// pause_span.style.transition = "all 0.3s";
+	updatebar = setInterval(update, 100);
+}
+function video_pause(){
+	video.pause();
+	play_span.style.visibility = "visible";
+	pause_span.style.visibility = "hidden";
+	// play_span.style.transition="all 0.3s";
+	// pause_span.style.transition="all 0.3s";
+	window.clearInterval(updatebar); //impede que o update fique sendo chamado 
+}
+//----- CLICK NO PLAY BUTTON
+play_pause_button.addEventListener("click", function(){
 	if(!video.paused && !video.ended){
-		video.pause();
-		play_button.style.background="red";
-		play_button.style.transition="all 0.3s";
-		window.clearInterval(updatebar); //impede que o update fique sendo chamado 
+		video_pause();
 	}
 	else{
-		video.play();
-		play_button.style.background="blue";
-		play_button.style.transition="all 0.3s";
-		var updatebar = setInterval(update, 100);
+		video_play();
 	}
 });
 
@@ -34,7 +48,7 @@ function update(){
 		progress_bar.style.width = size_percent+'%';
 	}
 	else{
-		play_button.style.background="red";
+		play_span.style.background="red";
 		progress_bar.style.width='0';
 		progress_bar.style.transition="all 0.1s";
 		window.clearInterval(updatebar); //impede que o update fique sendo chamado
@@ -51,7 +65,7 @@ function update(){
 progress_bar_container.addEventListener("click", function(e){
 	
 	if(!video.ended){
-		progress_bar_container.style.backgroundColor="pink";
+		// progress_bar_container.style.backgroundColor="pink";
 		let mouseX = e.pageX - progress_bar_container.getBoundingClientRect().left;
 		
 		let newWidth_ratio = mouseX/progress_bar_container.getBoundingClientRect().width;
@@ -76,7 +90,7 @@ comment_button.addEventListener("click", function(){
 	if(!comment_btn_clicked){
 		video.pause();
 		comment_container.style.visibility = "visible";
-		comment_container.focus();
+		// comment_container.focus();
 		comment_btn_clicked = true;
 	}
 	else{
@@ -97,9 +111,9 @@ document.addEventListener("keydown", function(e){
 		switch(e.key){
 			case " ": //Barra de Espaço
 					if(video.paused)
-						video.play();
+						video_play();
 					else
-						video.pause();
+						video_pause();
 					e.preventDefault(); //evita repetiçao da entrada
 					break;
 		}
@@ -122,3 +136,8 @@ comment_send_button.addEventListener("click", function(){
 	localStorage.setItem(key, value);
 	comment_container.style.visibility="hidden";
 },false);
+
+//----- CHANGE PLAY ICON ---------
+// function changePlayIcon(){
+// 	document.
+// }

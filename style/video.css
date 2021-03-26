@@ -65,10 +65,10 @@ html{
 }
 #comment-container .button{
 	border-radius:10px;
-	background-color:pink;
+	/* background-color:pink; */
 }
 #comment-container input:focus{
-	background:yellow;
+	/* background:yellow; */
 }
 #comment_send_button{
 	width:70%;
@@ -79,29 +79,61 @@ html{
 .video-menu{
     position:relative;
     /* display: flex; */
-    
+    padding-left:20px;
+	padding-right:20px;
     width:100%;
     height:80px;
     bottom:0;
-    background:red;
+    /* background:red; */
 }
 .timeline-group{
 	position:relative;
 	display:flex;
     width:100%;
-    height:25%;
-    background:green;
+    height:20%;
+    /* background:green; */
 	text-align:center;
 }
 .timeline-group #progress-bar__container{
+	position:relative;
     width: 95%;
     height: 100%;
 }
-
+.timeline-group #progress-bar__container:hover > #fixed-bar{
+	outline: 1px solid gray;
+}
+.timeline-group #progress-bar__container:hover > #progress-bar{
+	outline: 1px solid red;
+}
+.timeline-group #fixed-bar{
+	width:100%;
+	height: 4px;
+	background: gray;
+}
 .timeline-group #progress-bar{
+	position:absolute;
+	top:0;
 	width:0;
-	height:50%;
-	background:yellow;
+	height:4px;
+	background:red;
+}
+
+#progress-bar #progress-bar-ball{
+	/* content:""; */
+	border-radius:20px;
+	background:red;
+	position:absolute;
+	right:-10px;
+	top:-8px;
+	width:20px;
+	height:20px;
+	z-index:2;
+	transform: scale(0.85);
+}
+#progress-bar #progress-bar-ball:hover{
+	transform:scale(1);
+	/* background:blue; */
+	transition: all 0.2s;
 }
 .timeline-group .remaining-time{
 	position:absolute;
@@ -113,22 +145,49 @@ html{
 }
 .buttons-group{
 	width:100%;
-	height:75%;
-	background:blue;
+	height:80%;
+	/* background:blue; */
 	display:flex;
 }
 .buttons-group .left-buttons{
+	position:relative;
+	left: -15px;
 	background:purple;
 	height:100%;
 	width:20%;
 	display:flex;
+	align-items: center;
+	overflow-y:hidden;
 }
 .buttons-group .button{
-	width:30px;
-	height:30px;
-	background:black;
+	position: relative;
+	width:50px;
+	height:100%;
+	/* background:black; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all .4s ease;
+	border:1px solid white;
+}
+.buttons-group .button:hover{
+	transform: scale(1.2);
+	transition: all .4s ease;
 }
 
+.buttons-group .button span{
+	position:absolute;
+	width:100%;
+	height:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* border: 1px solid blue; */
+}
+#pause-span{
+	visibility: hidden;
+	transform: scale(0.8);
+}
 #comment-btn{
     /*position:relative;*/
     margin:auto;
