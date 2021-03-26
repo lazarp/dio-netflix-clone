@@ -12,7 +12,7 @@ let comment_cancel_button = document.getElementById("comment_cancel_button");
 let video_controls_container = document.getElementById("video_controls");
 let comment_send_button = document.getElementById("comment_send_button");
 
-
+let comment_btn_clicked = false;
 var updatebar;
 
 //---- PLAY/PAUSE ----------------------
@@ -20,9 +20,10 @@ function video_play(){
 	video.play();
 	play_span.style.visibility = "hidden";
 	pause_span.style.visibility = "visible";
-	// play_span.style.transition = "all 0.3s";
-	// pause_span.style.transition = "all 0.3s";
 	updatebar = setInterval(update, 100);
+	if(comment_btn_clicked){ //janela do comentário está aberta
+
+	}
 }
 function video_pause(){
 	video.pause();
@@ -85,25 +86,29 @@ progress_bar_container.addEventListener("click", function(e){
 	2) Habilitar Textarea
 
 */
-let comment_btn_clicked = false;
+
 comment_button.addEventListener("click", function(){
 	if(!comment_btn_clicked){
-		video.pause();
-		comment_container.style.visibility = "visible";
-		// comment_container.focus();
-		comment_btn_clicked = true;
+		open_comment_box();
 	}
 	else{
-		// video.play();
-		comment_container.style.visibility = "hidden";
-		comment_btn_clicked = false;
+		close_comment_box();
 	}
 });
 
 comment_cancel_button.addEventListener("click", function(){
+	close_comment_box();
+}, false);
+
+function open_comment_box(){
+	video_pause();
+	comment_container.style.visibility = "visible";
+	comment_btn_clicked = true;
+}
+function close_comment_box(){
 	comment_container.style.visibility = "hidden";
 	comment_btn_clicked = false;
-}, false);
+}
 
 //----- SHORTCUTS CONTROLS -------
 document.addEventListener("keydown", function(e){
