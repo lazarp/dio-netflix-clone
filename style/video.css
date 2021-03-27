@@ -168,13 +168,12 @@ html{
 	justify-content: center;
 	align-items: center;
 	transition: all .4s ease;
+	overflow:hidden; /*evita que os spans ultrapassem o tamanho do button*/
 	border:1px solid white;
 }
 .buttons-group .button:hover{
-	transform: scale(1.2);
-	transition: all .4s ease;
+	cursor:pointer;
 }
-
 .buttons-group .button span{
 	position:absolute;
 	width:100%;
@@ -182,10 +181,28 @@ html{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* border: 1px solid blue; */
+	/*border: 1px solid blue;*/ 
 }
+.buttons-group .button span:hover{
+	transform: scale(1.2);
+	transition: all .4s ease;
+}
+/*---- OVERLAY CORRECTIONS --------*/
+#play-span{
+	transition: all .4s ease, visibility 0s ease .1s;
+}
+
 #pause-span{
-	visibility: hidden;
+	visibility:hidden;
+	transition:all .4s ease, visibility 0s ease .1s;
+}
+/*---- SVG SIZE CORRECTIONS -------*/
+/*FOWARD & REPLAY ICONS*/
+#foward-span svg, #replay-span svg{
+	transform: scale(1.8);
+}
+/*PAUSE ICON*/
+#pause-span svg{
 	transform: scale(0.8);
 }
 #comment-btn{

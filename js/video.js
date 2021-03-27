@@ -3,6 +3,8 @@ let add_audio = document.getElementsByClassName("comment-btn")[0];
 let play_pause_button = document.getElementById("play-pause-button");
 let play_span = document.getElementById("play-span");
 let pause_span = document.getElementById("pause-span");
+let foward_button = document.getElementById("foward-button");
+let replay_button = document.getElementById("replay-button");
 let progress_bar = document.getElementById("progress-bar");
 let progress_bar_container = document.getElementById("progress-bar__container");
 let comment_button = document.getElementById("comment-btn");
@@ -54,6 +56,24 @@ function update(){
 		window.clearInterval(updatebar); //impede que o update fique sendo chamado
 	}
 }
+//---- CLICK FOWARD & REPLAY BUTTONS ------------------
+
+foward_button.addEventListener("click", function(){
+	if(!video.ended){
+		video_pause();
+		video.currentTime += 1;	
+		video_play();
+	}
+}, false);
+
+replay_button.addEventListener("click", function(){
+	if(!video.ended){
+		video_pause();
+		video.currentTime -= 1;	
+		video_play();
+	}
+}, false);
+
 //---- PROGRESS BAR CLICK FUNCTION --------------------
 /*
 	1) Pegar a posição x do mouse
@@ -141,7 +161,3 @@ comment_send_button.addEventListener("click", function(){
 	comment_container.style.visibility="hidden";
 },false);
 
-//----- CHANGE PLAY ICON ---------
-// function changePlayIcon(){
-// 	document.
-// }
