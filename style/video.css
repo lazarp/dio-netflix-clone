@@ -148,6 +148,7 @@ html{
 	height:80%;
 	/* background:blue; */
 	display:flex;
+	padding-bottom:5px;
 }
 .buttons-group .left-buttons{
 	position:relative;
@@ -169,7 +170,7 @@ html{
 	align-items: center;
 	transition: all .4s ease;
 	overflow:hidden; /*evita que os spans ultrapassem o tamanho do button*/
-	border:1px solid white;
+	/*border:1px solid white;*/
 }
 .buttons-group .button:hover{
 	cursor:pointer;
@@ -205,16 +206,16 @@ html{
 #pause-span svg{
 	transform: scale(0.8);
 }
+/*---- ADD COMMENT ------------------*/
 #comment-btn{
     /*position:relative;*/
     margin:auto;
-    display:flex;
-    flex-direction:column;
-    justify-content: space-between;
-    align-items: center;
-    background:red;
-    width:100px;
-    height: 40px;
+}
+#comment-btn #comment-span{
+	
+}
+#comment-span svg{
+	transform:scale(0.7);
 }
 #comment-btn img{
     height:20px;
