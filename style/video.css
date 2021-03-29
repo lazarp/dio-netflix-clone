@@ -160,7 +160,7 @@ html{
 	display:flex;
 	padding-bottom:5px;
 }
-.buttons-group .left-buttons{
+.buttons-group .buttons-container{
 	position:relative;
 	left: -15px;
 	background:purple;
@@ -180,7 +180,7 @@ html{
 	align-items: center;
 	transition: all .4s ease;
 	overflow:hidden; /*evita que os spans ultrapassem o tamanho do button*/
-	/*border:1px solid white;*/
+	border:1px solid white;
 }
 .buttons-group .button:hover{
 	cursor:pointer;
@@ -216,14 +216,16 @@ html{
 #pause-span svg{
 	transform: scale(0.8);
 }
+/* Speedometer */
+#speed-span svg{
+	transform: scale(0.7);
+}
 /*---- ADD COMMENT ------------------*/
 #comment-btn{
     /*position:relative;*/
     margin:auto;
 }
-#comment-btn #comment-span{
-	
-}
+
 #comment-span svg{
 	transform:scale(0.7);
 }
