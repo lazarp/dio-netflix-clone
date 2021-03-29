@@ -223,6 +223,13 @@ html{
 #fullscreen-span svg{
 	transform: scale(0.5) scaleX(1.3);
 }
+#next-span svg{
+	transform: scale(0.45);
+}
+#previous-span svg{
+	transform: scale(0.45) scalex(-1);
+}
+
 /*---- ADD COMMENT ------------------*/
 #comment-btn{
     /*position:relative;*/
