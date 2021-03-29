@@ -13,6 +13,7 @@ let comment_textarea = document.getElementById("comment_textarea");
 let comment_cancel_button = document.getElementById("comment_cancel_button");
 let video_controls_container = document.getElementById("video_controls");
 let comment_send_button = document.getElementById("comment_send_button");
+let remaining_time_span = document.getElementById("remaining-time-span");
 
 let comment_btn_clicked = false;
 var updatebar;
@@ -24,7 +25,7 @@ function video_play(){
 	pause_span.style.visibility = "visible";
 	updatebar = setInterval(update, 100);
 	if(comment_btn_clicked){ //janela do comentário está aberta
-
+		//o que eu ia colocar aqui?
 	}
 }
 function video_pause(){
@@ -44,6 +45,7 @@ play_pause_button.addEventListener("click", function(){
 });
 
 function update(){
+	update_remaining_time();
 	if(!video.ended){
 		let size_percent = (video.currentTime/video.duration)*100;
 		progress_bar.style.width = size_percent+'%';
@@ -53,9 +55,38 @@ function update(){
 		pause_span.style.visibility = "hidden";
 		progress_bar.style.width='0';
 		progress_bar.style.transition="all 0.1s";
+
 		window.clearInterval(updatebar); //impede que o update fique sendo chamado
 	}
 }
+//---- REMAINING TIME -----------------------
+
+function format_time(raw_seconds) {
+	let result = "0:00";
+	if(!video.ended){
+		let hour    = Math.floor(raw_seconds / 3600);
+		let resto   = raw_seconds % 3600;
+		let minutes = Math.floor(resto / 60);
+		let seconds = Math.floor(resto % 60);
+		
+		let hour_str    = hour.toString() + ":";
+		let minutes_str = minutes.toString() + ":";
+		let seconds_str = seconds.toString();
+		
+		if(hour == 0) hour_str = "";
+		if (seconds >= 0 && seconds < 10) seconds_str = "0" + seconds_str;
+
+		result = hour_str + minutes_str + seconds_str;
+	}
+	return result;
+	
+}
+
+function update_remaining_time(){
+	let formated_time = format_time(video.currentTime);
+	remaining_time_span.innerHTML = formated_time;
+}
+
 //---- CLICK FOWARD & REPLAY BUTTONS ------------------
 
 foward_button.addEventListener("click", function(){

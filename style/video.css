@@ -96,6 +96,8 @@ html{
 }
 .timeline-group #progress-bar__container{
 	position:relative;
+	display: flex;
+	align-items: center;
     width: 95%;
     height: 100%;
 }
@@ -112,7 +114,7 @@ html{
 }
 .timeline-group #progress-bar{
 	position:absolute;
-	top:0;
+	/* top:0; */
 	width:0;
 	height:4px;
 	background:red;
@@ -135,13 +137,21 @@ html{
 	/* background:blue; */
 	transition: all 0.2s;
 }
-.timeline-group .remaining-time{
+.timeline-group #remaining-time{
 	position:absolute;
 	right:0;
 	float:right;
 	width:5%;
 	height:100%;
-	background:brown;
+	/* background:brown; */
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+#remaining-time-span{
+	color:white;
+	font-size:14px;
 }
 .buttons-group{
 	width:100%;
