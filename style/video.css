@@ -220,6 +220,9 @@ html{
 #speed-span svg{
 	transform: scale(0.7);
 }
+#fullscreen-span svg{
+	transform: scale(0.5) scaleX(1.3);
+}
 /*---- ADD COMMENT ------------------*/
 #comment-btn{
     /*position:relative;*/
