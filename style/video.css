@@ -162,13 +162,18 @@ html{
 }
 .buttons-group .buttons-container{
 	position:relative;
-	left: -15px;
-	background:purple;
+	/*background:purple;*/
 	height:100%;
 	width:20%;
 	display:flex;
 	align-items: center;
 	overflow-y:hidden;
+}
+.buttons-group #left-buttons{
+	left:-15px;
+}
+.buttons-group #right-buttons{
+	justify-content:flex-end;
 }
 .buttons-group .button{
 	position: relative;
@@ -180,7 +185,7 @@ html{
 	align-items: center;
 	transition: all .4s ease;
 	overflow:hidden; /*evita que os spans ultrapassem o tamanho do button*/
-	border:1px solid white;
+	/*border:1px solid white;*/
 }
 .buttons-group .button:hover{
 	cursor:pointer;
